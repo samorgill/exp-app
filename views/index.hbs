@@ -1,0 +1,39 @@
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  
+<div class="row container loginContainer" style="margin-top: 20px">
+    <form id="loginForm" class="card col s12" method="post" action="/auth/login" enctype="application/x-www-form-urlencoded">
+        <h5 class="loginTitle center-align">{{title}}</h5>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="username" type="text" name="username" placeholder="Enter your user name" >
+                <label for="username">User name</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password" name="password" type="password" placeholder="Enter your password">
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <p id="loginError" class="red-text center"><span id="loginError"></span></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m12">
+                <p class="center-align">
+                    <button id="btnLogin" type="submit" class="btn btn-large waves-effect waves-light">Login</button>
+                </p>
+            </div>
+        </div>
+    </form>  
+</div>
+
+
+<!--<link rel='stylesheet' href='../css/login.min.css'>-->
+  
+<script type="application/javascript" src="../js/views.login.js"></script>
