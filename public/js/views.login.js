@@ -1,8 +1,10 @@
- Failed to lookup view "error" in views directory 
+var express = require('express');
+var router = express.Router();
+var request = require('request');
+
 
 $(document).ready(function() {
 
-  $('.tooltipped').tooltip({delay: 50});
   $('#username').trigger('click');
   $('#username').focus();
 
@@ -22,7 +24,7 @@ $(document).ready(function() {
     var uname = $('#username').val();
     var pwd = $('#password').val();
 
-    $.post('http://localhost:8000/api/auth/login', {username: uname, password: pwd}, function(res) {
+    /*$.post('http://localhost:8000/api/auth/login', {username: uname, password: pwd}, function(res) {
 
       if (res.status === 'OK') {
      //   sessionStorage.setItem('user_key', res.secret);
@@ -30,10 +32,12 @@ $(document).ready(function() {
       } else {
           console.log('error');
         /*$('#loginError').text(res.message);
-        $('#pass').val('');*/
+        $('#pass').val('');
       }
 
-    });
+    });*/
+
+    request.post('http://localhost:8000/api/auth/login', {form:{username: uname, password: pwd}});  
 
   });
 });
