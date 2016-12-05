@@ -10,6 +10,7 @@ var bears = [];
 
 //Call API to get the title
 request('http://localhost:8000/api', function(error, response, body){
+  console.log(JSON.stringify(body));
     var data = JSON.parse(body);
     ttl = data.message;
   });
